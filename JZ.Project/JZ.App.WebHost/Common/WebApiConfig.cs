@@ -14,11 +14,11 @@ namespace JZ.App.WebHost.Common
         {
             // Web API 配置和服务
             // JSON 序列化时间
-            var jsonFormatter = new JsonMediaTypeFormatter();
-            config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
-            jsonFormatter.SerializerSettings.Converters.Add(
-                new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" }
-                );
+            //var jsonFormatter = new JsonMediaTypeFormatter();
+            //config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
+            //jsonFormatter.SerializerSettings.Converters.Add(
+            //    new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" }
+            //    );
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
