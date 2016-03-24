@@ -84,18 +84,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\FileResultResponse.cs" />
+    <Compile Include="Common\RequestHelp.cs" />
+    <Compile Include="Common\UploadFile.cs" />
+    <Compile Include="Common\UserInfo.cs" />
+    <Compile Include="Controllers\ProcessController.cs" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\AutofacConfig.cs" />
-    <Compile Include="Common\JsonContentNegotiator.cs" />
-    <Compile Include="Common\WebApiConfig.cs" />
+    <Compile Include="Common\WebApi\AutofacConfig.cs" />
+    <Compile Include="Common\WebApi\JsonContentNegotiator.cs" />
+    <Compile Include="Common\WebApi\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="log4net.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -104,6 +111,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FrameWork\FrameWork.csproj">
+      <Project>{dd3f7a82-d288-47c5-a5d3-5fb12af485bb}</Project>
+      <Name>FrameWork</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JZ.App.Api\JZ.App.Api.csproj">
       <Project>{272df27d-7661-46e9-bdc6-ad7fad5eb1ec}</Project>
       <Name>JZ.App.Api</Name>

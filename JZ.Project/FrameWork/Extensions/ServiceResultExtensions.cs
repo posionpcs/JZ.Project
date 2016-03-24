@@ -1,9 +1,7 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.InteropServices;
+﻿using System;
 
+namespace FrameWork
+{
     public static class ServiceResultExtensions
     {
         public static T Get<T>(this ServiceResult svr, string key) where T: class

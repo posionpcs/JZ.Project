@@ -1,8 +1,7 @@
-﻿namespace FrameWork.Authorization
-{
-    using System;
-    using System.Runtime.CompilerServices;
+﻿using System;
 
+namespace FrameWork.Authorization
+{
     public class SystemUser
     {
         public string Email { get; set; }

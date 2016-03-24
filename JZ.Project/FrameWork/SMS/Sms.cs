@@ -2,8 +2,6 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Web;
-using FrameWork.Utils;
 
 namespace FrameWork.SMS
 {

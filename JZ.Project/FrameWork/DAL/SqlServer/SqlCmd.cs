@@ -1,9 +1,7 @@
-﻿namespace Framework.DAL.SqlServer
-{
-    using Dapper;
-    using System;
-    using System.Runtime.CompilerServices;
+﻿using Dapper;
 
+namespace Framework.DAL.SqlServer
+{
     public class SqlCmd
     {
         public SqlCmd()

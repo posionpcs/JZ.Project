@@ -1,8 +1,7 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Runtime.CompilerServices;
+﻿using System;
 
+namespace FrameWork
+{
     public static class ExceptionExtensions
     {
         public static void ThrowIf<T>(this T argument, Func<T, bool> predicate, string msg)

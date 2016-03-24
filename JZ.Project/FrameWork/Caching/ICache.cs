@@ -1,9 +1,8 @@
-﻿namespace FrameWork.Caching
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
 
+namespace FrameWork.Caching
+{
     public interface ICache
     {
         bool Add(string key, string value, int seconds = 0);

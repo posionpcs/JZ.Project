@@ -1,10 +1,8 @@
-﻿namespace FrameWork.File
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices;
-    using System.Web;
+﻿using System.Collections.Generic;
+using System.Web;
 
+namespace FrameWork.File
+{
     public interface IExcelClient
     {
         void FileExport<T>(IEnumerable<T> source, string fileName);

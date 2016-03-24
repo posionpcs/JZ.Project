@@ -1,8 +1,7 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace FrameWork
+{
     public class ServiceResult
     {
         public Dictionary<string, object> Data;
@@ -27,6 +26,12 @@
                 return (this.ResultCode == ServiceResultCode.SUCCEED);
             }
         }
+    }
+
+    public  static class ServiceResultCode
+    {
+        internal static readonly int FAILED = 1;
+        internal static readonly int SUCCEED = 0;
     }
 }
 

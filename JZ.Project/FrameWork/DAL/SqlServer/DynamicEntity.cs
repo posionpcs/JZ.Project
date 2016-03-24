@@ -1,10 +1,8 @@
-﻿namespace Framework.DAL.SqlServer
-{
-    using System;
-    using System.Reflection;
-    using System.Runtime.CompilerServices;
-    using System.Text;
+﻿using System.Reflection;
+using System.Text;
 
+namespace Framework.DAL.SqlServer
+{
     public static class DynamicEntity<T>
     {
         static DynamicEntity()
@@ -45,7 +43,7 @@
         {
             bool flag = false;
             StringBuilder builder = new StringBuilder();
-            foreach (PropertyInfo info in DynamicEntity<T>.Fields)
+            foreach (PropertyInfo info in Fields)
             {
                 if (flag)
                 {

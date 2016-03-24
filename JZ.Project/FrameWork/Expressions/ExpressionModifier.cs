@@ -1,8 +1,7 @@
-﻿namespace FrameWork.Expressions
-{
-    using System;
-    using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
+namespace FrameWork.Expressions
+{
     public class ExpressionModifier : ExpressionVisitor
     {
         private Expression newExpression;

@@ -1,14 +1,10 @@
-﻿namespace Framework.DAL.SqlServer
-{
-    using Dapper;
-    using Microsoft.CSharp.RuntimeBinder;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.InteropServices;
-    using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Dapper;
 
+namespace Framework.DAL.SqlServer
+{
     public class SqlBuilder
     {
         private Dictionary<string, Clauses> data = new Dictionary<string, Clauses>();
@@ -130,7 +126,7 @@
             public string Sql { get; set; }
         }
 
-        private class Clauses : List<SqlBuilder.Clause>
+        private class Clauses : List<Clause>
         {
             private string joiner;
             private string postfix;
@@ -145,11 +141,11 @@
 
             public string ResolveClauses(DynamicParameters p)
             {
-                foreach (SqlBuilder.Clause clause in this)
+                foreach (Clause clause in this)
                 {
                     p.AddDynamicParams(clause.Parameters);
                 }
-                if (!this.Any<SqlBuilder.Clause>(a => a.IsInclusive))
+                if (!this.Any<Clause>(a => a.IsInclusive))
                 {
                     return (this.prefix + string.Join(this.joiner, (IEnumerable<string>) (from c in this select c.Sql)) + this.postfix);
                 }
@@ -185,7 +181,7 @@
                 {
                     DynamicParameters p = new DynamicParameters(this.initParams);
                     this.rawSql = this.sql;
-                    foreach (KeyValuePair<string, SqlBuilder.Clauses> pair in this.builder.data)
+                    foreach (KeyValuePair<string, Clauses> pair in this.builder.data)
                     {
                         string oldValue = "/*" + pair.Key + "*/";
                         this.rawSql = this.rawSql.Replace(oldValue, pair.Value.ResolveClauses(p));

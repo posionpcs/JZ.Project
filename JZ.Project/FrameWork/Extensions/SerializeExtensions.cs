@@ -1,12 +1,9 @@
-﻿namespace FrameWork
-{
-    using Newtonsoft.Json;
-    using System;
-    using System.IO;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.InteropServices;
-    using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using Newtonsoft.Json;
 
+namespace FrameWork
+{
     public static class SerializeExtensions
     {
         public static T Deserialize<T>(this byte[] stream)

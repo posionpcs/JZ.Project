@@ -2,9 +2,6 @@
 
 namespace FrameWork.Log
 {
-    using System;
-    using System.Runtime.InteropServices;
-
     public interface ILog
     {
         void WriteToFile(string message, string dir = "");

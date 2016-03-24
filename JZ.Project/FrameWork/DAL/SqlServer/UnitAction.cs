@@ -1,9 +1,8 @@
-﻿namespace Framework.DAL.SqlServer
-{
-    using System;
-    using System.Data;
-    using System.Runtime.CompilerServices;
+﻿using System;
+using System.Data;
 
+namespace Framework.DAL.SqlServer
+{
     public class UnitAction
     {
         public UnitAction(Func<IDbTransaction, int> action, IDbConnection conn)

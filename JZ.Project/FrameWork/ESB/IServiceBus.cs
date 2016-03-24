@@ -1,9 +1,8 @@
-﻿namespace FrameWork.ESB
-{
-    using System;
-    using System.Runtime.InteropServices;
-    using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
+namespace FrameWork.ESB
+{
     public interface IServiceBus : IDisposable
     {
         void Publish<T>(T message) where T: class;

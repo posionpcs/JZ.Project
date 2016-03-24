@@ -1,18 +1,16 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Globalization;
-    using System.Runtime.CompilerServices;
-    using System.Security.Cryptography;
-    using System.Text;
+﻿using System;
+using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
 
+namespace FrameWork
+{
     public static class EncryptionExtensions
     {
-        public static string EncFromDES(this string input, string key)
+        private static string EncFromDES(this string input, string key)
         {
             return string.Empty;
         }
-
         public static string EncFromDES(this string input, string key, string iv)
         {
             string[] strArray = input.Split("-".ToCharArray());

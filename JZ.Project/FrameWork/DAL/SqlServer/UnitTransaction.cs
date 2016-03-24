@@ -10,7 +10,7 @@ namespace Framework.DAL.SqlServer
  
     using System.Transactions;
 
-    public class UnitTransaction : IUnitTransaction, IDisposable
+    public class UnitTransaction : IUnitTransaction
     {
         private List<UnitAction> actionList = new List<UnitAction>();
         private bool commited;

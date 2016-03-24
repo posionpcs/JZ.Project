@@ -1,8 +1,7 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace FrameWork
+{
     public class PageList<T>
     {
         private List<T> items;

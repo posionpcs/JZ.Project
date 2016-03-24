@@ -1,10 +1,9 @@
-﻿namespace FrameWork.Caching
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Runtime.Caching;
-    using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Caching;
 
+namespace FrameWork.Caching
+{
     public class LocalCache : ICache
     {
         public bool Add(string key, string value, int seconds = 0)
@@ -13,17 +12,17 @@
             {
                 return false;
             }
-            return cache.Add(key, value, this.GetTimeOffset(seconds), null);
+            return cache.Add(key, value, this.GetTimeOffset(seconds));
         }
 
         public bool Contains(string key)
         {
-            return cache.Contains(key, null);
+            return cache.Contains(key);
         }
 
         public string Get(string key)
         {
-            return (cache.Get(key, null) as string);
+            return (cache.Get(key) as string);
         }
 
         public string[] Get(string[] keys)
@@ -35,14 +34,14 @@
             string[] strArray = new string[keys.Length];
             for (int i = 0; i < strArray.Length; i++)
             {
-                strArray[i] = cache.Get(keys[i], null) as string;
+                strArray[i] = cache.Get(keys[i]) as string;
             }
             return strArray;
         }
 
         public string GetOrAdd(string key, Func<string> aquire, int seconds = 0)
         {
-            string str = cache.Get(key, null) as string;
+            string str = cache.Get(key) as string;
             if (str == null)
             {
                 str = aquire();
@@ -50,14 +49,14 @@
                 {
                     return null;
                 }
-                cache.Add(key, str, this.GetTimeOffset(seconds), null);
+                cache.Add(key, str, this.GetTimeOffset(seconds));
             }
             return str;
         }
 
         public string GetOrSet(string key, Func<string> aquire, int seconds = 0)
         {
-            string str = cache.Get(key, null) as string;
+            string str = cache.Get(key) as string;
             if (str == null)
             {
                 str = aquire();
@@ -109,7 +108,7 @@
             }
             foreach (KeyValuePair<string, string> pair in kvs)
             {
-                cache.Set(pair.Key, pair.Value, DateTimeOffset.MaxValue, null);
+                cache.Set(pair.Key, pair.Value, DateTimeOffset.MaxValue);
             }
             return true;
         }
@@ -120,7 +119,7 @@
             {
                 return false;
             }
-            cache.Set(key, value, this.GetTimeOffset(seconds), null);
+            cache.Set(key, value, this.GetTimeOffset(seconds));
             return true;
         }
 

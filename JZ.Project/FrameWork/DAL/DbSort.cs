@@ -1,9 +1,8 @@
-﻿namespace FrameWork.DAL
-{
-    using System;
-    using System.Linq.Expressions;
-    using System.Runtime.InteropServices;
+﻿using System;
+using System.Linq.Expressions;
 
+namespace FrameWork.DAL
+{
     public class DbSort<T>
     {
         private string orderby;

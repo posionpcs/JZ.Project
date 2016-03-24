@@ -1,12 +1,10 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Configuration;
-    using System.Runtime.CompilerServices;
-    using System.Runtime.InteropServices;
-    using System.Text.RegularExpressions;
-    using System.Web;
+﻿using System;
+using System.Configuration;
+using System.Text.RegularExpressions;
+using System.Web;
 
+namespace FrameWork
+{
     public static class StringExtensions
     {
         private static Regex _dateregex = new Regex(@"(\d{4})-(\d{1,2})-(\d{1,2})");

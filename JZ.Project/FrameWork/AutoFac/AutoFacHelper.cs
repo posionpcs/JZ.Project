@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Compilation;
 using Autofac;
 using Framework.DAL.SqlServer;
-using FrameWork.Caching;
 using FrameWork.DAL;
-using FrameWork.Redis;
 using FrameWork.Utils;
 
 namespace FrameWork.AutoFac

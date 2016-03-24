@@ -1,8 +1,7 @@
-﻿namespace FrameWork
-{
-    using System;
-    using System.Runtime.CompilerServices;
+﻿using System;
 
+namespace FrameWork
+{
     public static class DecimalExtensions
     {
         public static decimal Rounddown(this decimal number, int digits)

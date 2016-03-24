@@ -17,7 +17,9 @@
                 HttpCookie cookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
                 if (cookie != null)
                 {
-                    return FormsAuthentication.Decrypt(cookie.Value).UserData.FromJson<SystemUser>();
+                    var formsAuthenticationTicket = FormsAuthentication.Decrypt(cookie.Value);
+                    if (formsAuthenticationTicket != null)
+                        return formsAuthenticationTicket.UserData.FromJson<SystemUser>();
                 }
             }
             return null;
@@ -41,7 +43,9 @@
                 cookie.Domain = FormsAuthentication.CookieDomain;
             }
             HttpContext.Current.Response.Cookies.Add(cookie);
-            HttpContext.Current.Response.Cookies[FormsAuthentication.FormsCookieName].Expires = DateTime.Now.AddYears(10);
+            var httpCookie = HttpContext.Current.Response.Cookies[FormsAuthentication.FormsCookieName];
+            if (httpCookie != null)
+                httpCookie.Expires = DateTime.Now.AddYears(10);
         }
 
         public static void SignOut()
